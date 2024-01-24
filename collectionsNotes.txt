@@ -1,0 +1,602 @@
+
+						>>>>>>>>>>>>>>--collection--<<<<<<<<<<<<<<<<
+
+	Collections:
+		* Representing group of objects as a single entity is known as collection.
+		* The object can be same type or it can be different type.
+		* The collection doesn't have any restiriction in size.
+		* Easy to maintain and manage the objects in collection.
+		* Collections are pure object oriented they don’t use any primitive data type.
+	  	* But while retrieving data we will get primitive type of data.
+		* In collections we use stereo types (<< >>) is used to denote interface.
+
+	Why we use Collection framework?
+	    * To overcome disadvantages of Array
+	    * Heterogeneous type
+	    * Dynamic size
+	    * predefined methods
+	    * It supports Generics.
+
+	In collection there are two type of data structure:
+
+	Linear data structures:
+		* The data will be arranged in a sequence manner.
+		* Elements are stored in a linear or sequential order.
+		* Examples include arrays, linkedlists, queues, and stacks.
+
+	Non-linear data structure:
+		* Data is not arranged in a sequential manner.
+		* Elements are stored in a hierarchical or non-sequential order.
+		* Examples include trees and graphs.
+
+	Advantages:
+	    * We can create more efficient to store the data.
+	    * Easy to perform insertion and deletion operation
+	    * Data structure is performance wise faster.
+	    * We can store heterogeneous type data
+	    * Time management
+	    * Dynamic memory 
+
+	Methods of Collections: 
+	   add( ) 
+	   add-All( )
+	   remove( )
+	   remove-All( )
+	   contains( )
+	   contains-All( )
+	   size( )
+	   clear( )
+	   iterator( )
+
+	Fundamentals of collection:
+
+		Adding element (Object)
+			* any class object can be added
+			* all object are casted to object type
+
+		Removing element:
+			* Downcast to access specific properties.
+
+		Retriving element:
+			* Accessing the element present inside collection.
+			* Downcast to access the specific properties.
+
+	Collection framework library:
+		* It is a Set of predefine interface, implementation classes and utility classes.
+		* The library contain general purpose implementation classes and special implementation classes.
+		* The library also contain implementation of standard data structures.
+			like:- Stack, Queue, LinkdeList, HashTable, Graph, Trees etc.
+
+	Important Interfaces:
+		* Iterable
+		* Iterator
+		* Collection
+		* List
+		* Queue
+		* Set
+		* Map
+
+	Important Implementation:
+		* Vector< >
+		* ArrayList< >
+		* LinkdeList< >
+		* HashSet< >
+		* LinkedHashSet< >
+		* PriorityQueue< >
+		* TreeSet< >
+		* HashMap< >
+		* LinkedHashMap< >
+		* HashTableTreeMap< >
+
+	Utlity class:
+		* Collections
+
+	<Generics>:
+	    * Generic is non-primitive type.
+	    * By using Generics we can achieve type safety-ness in Collection.
+	    * By using generic we can avoid unnecessary typecasting/down-casting.
+	    * Generics is an important feature of Collection framework & it was introduced in JDK 1.5.
+	    * If we don’t provide any specific generic type, by default it will consider object type as generic.
+	    * Mainly Generic are used in Collection.
+	    * We can indicate Generics by using Angular braces <E>, E represents element type of data.
+	    * We can use Generics type for classes also.
+	    * Generics is not supported for arrays.
+
+	Collection Interface:
+		* This interface is a root of collection framework libraries.
+		* This interface defines the standard essential operations that should be performed an any type of collection.
+		* It is a child interface of itterable interface.
+
+	Collection interface has 3 child interfaces:
+		* List
+		* Queue
+		* Set
+
+	Diagram of collection
+		|------------------------------|  <<Iterable>> |--------------------------------------|
+		|		          		  	   | <<Collection>>|								   	  |
+		|									  |											   	  |
+		|	<<List>>     		  	      <<Queue>>      			 <<Set>>			   	  |
+		|		+			  |------------+							+				   	  |
+		|	<<ArrayList>>	  |---------<<Deque>>					 <<SortedSet>>		   	  |
+		|	<<Vector>>		  | 		     |-<<ArrayDeque>>		     |-<<TreeSet>>	   	  |
+		|		|-<<Stack>>   |		 <<PriorityQueue>>		     <<HashSet>>			   	  |
+		|	<<LinkedList>>----|		     							   	 |-<<LinkedHashSet>>  |
+		|-------------------------------------------------------------------------------------|
+
+		|--------------------------------| MAP |----------------------------------|
+		|		<<HashMap>>			  <<HashTable>>    			<<SortedMap>>	  |
+		|           |												  |   	 	  |
+		|     <<LinkedHashMap>>									  <<Treemap>>	  |
+		|-------------------------------------------------------------------------|
+
+
+
+	Methods of Collection Interface:
+		public boolean add(Object element){
+			* The method is used to add the elemetnts into the collection 
+			* It returns true if the element added sucessfully otherwise it returns false.
+		}
+		public boolean remove(Object element){
+			* This method is used to remove an element form elements.
+			* If the given element is found in the collection the method remove it and return true.
+			* If the given element is not found in the collection the method fails to remove the elements and returns false.
+		}
+		public boolean contain (Object element){
+			* The method is used to check wheather the given element is present or not in the collection
+			* If collection contain given element, it returns true otherwise it return false.
+		}
+		public int size(){
+			* The method retruns totalnumber of elements prsent in the collection.
+		}
+		public boolean isEmpty(){
+			* This method is used to find wheather the collection is empty or not.
+			* This method returns true if the collection is empty otherwise it returns false.
+		}
+		public void clear(){
+			* This method will remove all the elements in the collection and collection become empty.
+		}
+		public Object [] toArray(){
+			* This method is used to convert the elements of the collection into array format.
+			* This method returns object array type containingy the element of the collection, the size of the collection became size of the array
+		}
+		public Iterator iterator(){}
+
+	Bulk Operation Methods:
+		public boolean addAll(collection c){}
+		public boolean containAll(collection c){}
+		public boolean removeAll(collection c){}
+		public boolean retainAll(collection c){}
+
+	List Interface:
+		* List is a predefined sub-interface of Collection, it was introduced in JDK 1.2 & present in java.util package.
+		* It is used to store the Objects with index.
+		* All the objects in the list will have an index number.
+		* The objects can be accessed based on its index.
+		* The list interface defined the specific operations of list type of collection.
+
+	Features of list:
+		* List is a indexed collection because all the elements the list will have indexed.
+		* List is auto indexed, whenever we add element into list it will get indexed automatically in sequence order.
+		* List allows duplicate element
+		* List allows null element.
+		* List maintains order of insertion.
+		* whenever we perform deletion or insertion operation the order of insertion will be changed.
+		* On the list we can perform operations based on indexed.
+
+	Types of list:
+	There are two types of list
+
+	Sequencel list:
+		* In this list the elements are stored sequentially one after another.
+	Non-sequencel list:
+		* In this type of list elements are stored in a random memory location.
+
+	Methods of list interface:
+
+		public void add(int index,Objects element){
+			* the method is used to insert the element at even index
+			* If the index isn't found it throws exception
+			* this method will shift the element to right of the list.
+		}
+
+		public Object get(int index){
+			* The method is used to reterive or access the element at teh given index.
+			* it returns reference to the element
+			* If the specified index isn't found it thorws exception.
+		}
+		Public Object remove(int index){
+			* This method is used to remove the element present at the given index, it returns reference of the removed element.
+			* If index isn't found the method throws exception.
+			* After this operations the elements of the list will be shifted to left.
+		}
+
+		public Object set(int index, Object element){
+			* The method is used to replace the existsing element at the given index by the given element
+			* It returns the reference of the remove object
+		}
+
+		public int indexOf(Object element){
+			* The method returns the index of first occurance of the given element in the list.
+			* If the element isn't found it returns -1;
+		}
+
+		public int lastIndexOf(Object element){
+			* The method returns the index of the last occurance of the given element in the list.
+		}
+
+		public List sublist(int startindex, int endindex){
+			* The method returns the partial list from the specified start-index upto the specified end-index.
+			* It excludes the elements at the end index.
+		}
+
+		public ListIteratior listiteratior(){}
+
+	List implementation process:
+		In the collection framework library three classes are implementing list interface methods.
+		* Array list
+		* Vector list
+		* Linked list
+
+		Array list and vector are the examples of seqeuential list
+		where as linked list is an example of non-seqeuential list
+
+	class diagram of list type collections:
+
+				|Iterable|         |
+			   |Collection|        |--->Interface
+			   |  List    |        |
+			        ^
+	array-list---vector----linked-list
+
+	ArrayList:
+		* Arraylist is a implementation class of list interface.
+		* It was intorduced in JDK 1.2 & present in java.util.package.
+		* It implements 3 Marker interface.
+			> Random access
+			> Serializable
+			> Clonable
+		* The array list uses re-sizable array data structure to store objects.
+		* The default capacity is 10.
+		* The array grows with the formula : |new-capacity=(current capacity *3/2)+1;| 60% increment;
+		* Array is a sequential list type.
+
+		The array list class as 3 overloaded constructor
+			* constructor without parameter                : ArrayList(){}
+			* constructor with int type parameter		   : ArrayList(int initial_capacity){}
+			* constructor with collection type parameter   : Array List(int initial_capacity, int incrimental_capacity){}
+
+	Increment process of Arraylist:
+		* Creating new ArrayList wiht new capacity
+		* Transfer all the elements form old arraylist object to new arraylist object.
+		* Change the refernce varuable to new arraylist
+
+	Specification of Array List: 
+		* Array is index based Collection.
+		* It follows insertion order.
+		* It allows operation of Duplicates data.
+		* It allows operation of null as a value.
+
+	Vector:
+		* Vector class is a implementation class of list interface.
+		* It implements 3 marker interfaces:
+			* Random access
+			* Serializable
+			* Clonable
+		* The vector class is build on re-sizable array data structure.
+		* The default capacity of vector is 10.
+		* The vector grows by double the current_capacity of the vector.
+		* The vector methods are synchronized, hence the vector class object is therad safe.
+		* Vector class is legacy class and it is recomended to use only for thread safe.
+
+Differences between ArrayList and Vector:
+	|---------------------------------------------|--------------------------------------------------|
+	|              ArrayList                      |              Vector                              |
+	|---------------------------------------------|--------------------------------------------------|
+	|  ArrayList was introduced in JDK 1.2        | Vector introduced in JDK 1.1.                    |
+	|---------------------------------------------|--------------------------------------------------|
+	|  ArrayList is multi-threaded                | Vector is single threaded.                       |
+	|---------------------------------------------|--------------------------------------------------|
+	|  ArrayList methods are not synchronised     | Vector methods are synchronised.                 |
+	|---------------------------------------------|--------------------------------------------------|
+	|  Performance wise Array List is faster      | Vector is comparatively slower performance wise. |
+	|---------------------------------------------|--------------------------------------------------|
+	|  ArrayList have 3 constructors              | Vector have 4 constructors.                      |
+	|---------------------------------------------|--------------------------------------------------|
+
+	LinkedList:
+		* LinkdeList class is implementaion class of list interface and Queue interface.
+		* It was introduce in JDK 1.2 & present in java.util package
+		* LinkedList implements only two marker interface.
+			* serializable 
+			* clonable
+		* The LinkedList uses double LinkdeList data structure.
+		* It is node based Collection.
+		* Internally the data is stored in the form of nodes.
+		* There is no initial capacity in Linked-List.
+		* Linked-List have only two constructors.
+		* It grows one node at a time.
+		* It has overloaded constructor.
+		* LinkedList is an non-sequential list
+		* We can use the functions of Queue and Deque
+
+	Differences between Array-List and Linked-List: 
+	|-----------------------------------------------|--------------------------------------------------------|
+	| 	              Array-List                    |                    Linked List                         |
+	|-----------------------------------------------|--------------------------------------------------------|
+	| Array-List is index based Collection          |	Linked-List is node based Collection.                |
+	|-----------------------------------------------|--------------------------------------------------------|
+	| Array-List is continues block of memory       |	Linked-List is not continues block of memory.        |
+	|-----------------------------------------------|--------------------------------------------------------|
+	| Array-List implements resizable/growable      | 	Linked-List internally implements Double Linked-List.|
+	|-----------------------------------------------|--------------------------------------------------------|
+	| Array-List have 3 constructors                |	Linked-List have 2 constructors.                     |
+	|-----------------------------------------------|--------------------------------------------------------|
+
+	Set:
+		* Set is a type of collection without creating duplicate object.
+		* The set allows only unique objects.
+
+	Features of Set:
+		* All elements must be unique.
+		* Generally set is unorderd collection
+		* The set elements doesn’t have index
+		* Null is allowed.
+		* Duplicates aren't allowed.
+
+	Types of Set:
+		* HashSet
+		* TreeSet
+
+	Implementation classes of set:
+		* HashSet
+			Unorder set,doesn’t maintain order of insertion
+		* LinkedHashSet
+			Ordered Set, maintains order of insertion
+		* TreeSet
+			Sorted set, by default elements are sorted in ascending order.
+
+	How set maintains uniques objects?
+		* While adding the element into the set the add method calls isEquals mehtod.
+		  to check wherather the hashcode of the element to be added is matching with the hashcode of the element is already added into the set
+		* In case if bothe hashcode are matching, the set doesn't allow to add the elements.
+		* If hashcode is not mathcing with any of the element, the element will be added into set.
+
+	Difference between List and Set:
+	|--------------------------------------------|-----------------------------------------------|
+	| 			List							 |			        Set                          |
+	|--------------------------------------------|-----------------------------------------------|
+	| List follows insertion order				 |   Set doesn't follows insertion order         |
+	|--------------------------------------------|-----------------------------------------------|
+	| It allows operation on duplicate data 	 |	It don't allows operation on duplicate data. |
+	|--------------------------------------------|-----------------------------------------------|
+	| we can insert multiple null in list		 |	we can insert only one null in set.          |
+	|--------------------------------------------|-----------------------------------------------|
+
+	HashSet:
+		* It is a implementaion class of Set interface.
+		* HashSet implements two marker interfaces:
+		 	* Serializable
+		 	* Clonable
+		* The HashSet uses HashTable data structure.
+		* The default capacity of HashSet is 16.
+		* The HashSet grows based on the load factor, the default load factor value is 0.75
+		* Constructor of the HashSet is overloaded.
+			* Constructor without parameter						HashSet h= new HashSet(); load factor(0.75)
+			* Constructor with int type paramerter				HashSet h= new HashSet(10); load factor(0.75)
+			* Constructor with int and float type paramerter.	HashSet h= new HashSet(10,0.85f); load factor(0.85)
+		* Constructor with collection type parameter.
+		* The HashSet start re.hashing(grow) based on the load factor
+		* It will rehash whent the entry reaches the (capacity * load factor) [Final ratio=capacity*0.75/0.85]
+
+	LinkedHashSet:
+		* LinkedHashSet is a sub class of HashSet.
+		* It uses hybrid data structure which is a combination of LinkedList and HashTable.
+		* The LinkedHashSet preserves the order of insertion.
+		* The method of the LinkedHashSet is synchronised, hence it is a thread safe class.
+
+	Queue:
+		* Queue is type of collection which stores and process the element in FIFO order.
+
+	Features of Queue:
+		* The Queue has two ends head and tail:
+		* The new element is always inserted at the tail end of the Queue.
+		* The head element will be removed first form the Queue.
+		* Queue is not a indexed collection.
+		* Null isn't allowed in the Queue.
+		* Duplicate element is allowed.
+
+	Queue Interface:
+		* The Queue interface defines the standard operation that can be perform on any Queue.
+		* All the implementation classes should implements the stated Queue methods.
+
+	Methods of Queue interface:
+	public boolean add(Object element){
+		* This method is used to insert the element at the tail end of the Queue
+		* If the elemetnts is inserted sucessfully returns true or returns false.
+	}
+	public boolean offer(Object element){
+		* This method is used to insert the element at the tail end of the Queue
+		* If the elemetnts is inserted sucessfully returns true or returns false.
+	}
+	public Object remove(){
+		* Removes the head element form Queue, if Queue is empty it throws Exception
+	}
+	public Object poll(){
+		* Removes the head element form Queue, if Queue is empty it throws Null.
+	}
+	public Object peek(){
+		* Reterive the head element form Queue, if Queue is empty , it returns Null
+	}
+	public Object element(){
+		* Reterive the head element form Queue, if Queue is empty , it returns Exception.
+	}
+
+Collection sorting technique:
+
+	using arithmatic operator
+	a[0]~a[1]
+		* +ve differ:-fisrt element bigger than second, swap the elements
+		* -ve differ:-First element smaller than second, don’t swap
+		* 0 differ:-If both are equal, don’t swap
+
+TreeSet:
+	* TreeSet is a implementation class of sorted set interface.
+	* Sorted Set interface is a sub interface of Set interface.
+	* The TreeSet implements two marker interfaces.
+		* Serializable
+		* Clonalble
+	* The TreeSet is build Balanced Binary Tree Data structure.
+	* TreeSet allows only Comparable type Objects
+	* In TreeSet we cann't insert null.
+	* The elements in the TreeSet are arranged in a ascending order by default.
+	* The constructor of the TreeSet is overloaded.
+		* Constructor without parameter 			TreeSet t= new TreeSet();
+			The TreeSet created will do mutual comparison of elements
+		* Constructor with parameter				TreeSet t= new TreeSet(Comparator type object);
+			In this case the TreeSet compares the elements non-mutually based on the given comparator type objects.
+			
+		* Construct with collection type paramerter TreeSet t= new TreeSet();
+
+PriorityQueue:
+	* PriorityQueue is a implementaion class of Queue interface.
+	* It implements two marker interface.
+	* It uses LinkedList data structure
+	* The default capacity is 11
+	* It allows only Comparable type objects.
+	* The elements of the PriorityQueue is processed on Prioritybases.
+	* By default the elements are arranged in ascending order and processed in ascending.
+	* It has overloaded constructors.
+		* Construct without paramerter
+		* Constructor wiht int type parameter
+		* Constructor with comparator type paramerter
+		* Constructor with collection type parameter.
+	
+	* The foreach on a priorityQueue will not access the element in a priority order it access in random order.
+	* We must use poll method to access and remove the element on priority bases.
+
+Cursor:
+	Traversing each element of a collection one by one  irrespective of its data structure.
+
+Types of Cursor:
+	Enumerator 		[Its a old legacy cursor, currently we don't used it]
+	Iterator   		[It is a widely used unidirectional cursor and applicable on types of collection]
+	List Iterator	[It is also widely used bidirectional cursor and applicable only ob list type collection]
+
+Iterator:
+	Iterator is unidirectional cursor used to traverse the elements of any types of collections.
+
+Iterator Interface:
+	Iterator Interface defines the methods to traverse the elements of the collections.
+
+Methods of Iterator Interface:
+
+	public Object next(){
+		* This methdo moves the cursor to next element in the collection and returns the reference of that element.
+		* If doesn’t have next element it throws no such element exception.
+	}
+
+	public boolean hasNext(){
+		This method retruns true if collection has the next element otherwise it returns false.
+	}
+
+	public Object remove(){
+		The method remove the element from the collection where the cursor is pointing
+	}
+
+Helper method:
+	public Iterator iterator(){
+		In all collection interface implementaion classes has a common helper method,
+		 which is used to get the object of Iterator type.
+	}
+
+ListIterator:
+ListIterator is type of cursor which is used for bidirectional navigation.
+This cursor is applicable only on list type of collection.
+
+ListIterator Interface:
+This interface defines the methods essential for traversing in bidirectional.
+
+Methods of ListIterator:
+	public Object next(){
+
+	}
+	public boolean hasNext(){
+
+	}
+	public Object remove(){
+
+	}
+	public Object previous(){
+		The method returns the reference of the element where cursor is currently pointing and moves to previous element of the list.
+		If previous element doesn’t exixts throws NoSuchElementException();
+	}
+	public boolean hasPrevious(){
+		
+	}
+
+Helper mehtod:
+	public ListIterator listiterator(){
+		returns the object of ListIterator type.
+	}
+
+	while(i.hasNext()){           |	  while(i.hasPrevious()){
+		Object ele=i.next();	  |	  	  Object ele=i.previous();
+			syso(ele);			  |	  		syso(ele);
+	}							  |	  }
+
+Map:
+	* A Map is a part of collection used to store the objects in a key value pair.
+	* The key is associated to the value.
+	* Key can be any type of object, it shouldn’t be duplicate.
+	* A key must be associated with only one value.
+	* Value can be any type of object.
+	* It can be duplicate also.
+	* The value cann't be accessed without key.
+	* The entire key value can be removed with the help of key.
+	* Certain types of map allows null as a key, null as value.
+
+Map Interface:
+	* The Map Interface defines the essential operations that should be performed on any type of Map.
+
+Methods of Map Interface:
+
+	public Object put(Object key, Object value){
+		* The method is used to associate the given key and value pair and store in the map.
+			It retruns the previously associated value of the key,if not retruns null.
+		* The first parameter will always key and the second paramerter will be value.
+	}
+
+	public int size(){}
+
+	public void clear(){}
+
+	public Object get(Object key){
+		* The method returns the value associated to the given key.
+		* If no association found for the key it returns null.
+	}
+	public Object remove(){
+		The method is used to remove the key value pair.
+		If the key is found in the map, it removes entire association
+	}
+
+	public boolean containsKey(Object key){
+		This methods returns true if the given key is found in the map. else returns false.
+	}
+
+	public boolean containsValue(Object value){
+		This method returns true if the map contains the given value, else returns false.
+	}
+
+	public Set Keys(){
+		The method returns set view of all keys in the map
+	}
+	public Collection values(){
+		The method returns collection view of all the values in the Map.
+	}
+
+Types of Map:
+	* HashMap
+	* LinkedHashMap
+	* HashTable
+	* TreeMap
