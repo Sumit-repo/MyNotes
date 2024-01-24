@@ -1,0 +1,89 @@
+Multitasking - Performing multiple task simultaneously known as multitasking.
+    -> Process Based multitasking
+        * Process Based multitasking is heavy weight process.
+        * In PBM every process required individual memory.
+        * PBM used in OS level.
+    -> Thread based multitasking
+        * TBM is light weight sub-process
+        * By using thread we can acheive multitasking in program.
+        * Thread will share same memory.
+        * TBM is also known as Multithreading.
+
+JVM will always create 3 Threads whenever a java program is runs.
+    -> Main Thread
+    -> Garbage collector Thread
+    -> Thread scheduler
+
+There are two ways to made Thread :
+    -> Extends Thread
+    -> Implements Runable (Functional Interface) 
+
+* Threads are independent 
+* Each and every thread will maintain seperate memory.
+* If any problem occurs in one Thread it is not going to affect another Thread execution.
+* we should not call start() twice for same Thread instance.
+* Some operating systems doesnt support Thread priority system.
+
+Thread Priority : One of the property of Thread, every priority has some level i.e 1-10.
+    Max priority = 10;
+    Min priority = 1;
+    Default = 5;
+
+    We can change thread priority before starting a thread using setPriority().
+
+Thread scheduler : schedule the Threads, It is a part of JVM.
+    * It will schedule the Thread based on Thread priority.
+    * Thread scheduler is type of daemon Thread.
+    * We can prevent Thread execution by using 
+        - sleep()
+        - joint()
+        - yeild()
+    
+Threads
+    1. Daemon Threads 
+        * Daemon Threads are also known as background working Threads.
+        * All Daemon Threads have very low priority.
+        * The priority will increase when Non-Daemon Threads are not working.
+        * Daemon Threads is Started by JVM.
+        * gc thread, thread scheduler thread.
+        * Daemon Thread will execute until Non-Daemon Thread are present.
+        * We can change Daemon nature of thread using Daemon method.
+        * We can change Daemon nature before starting a Thread.
+        * We cant change main Thread Daemon nature.
+        * All user defined Threads can be called as Non-Daemon Threads, including main Thread
+    - Non-Daemon Threads
+
+syncronization - syncronization is a mechanism used to avoid multiple thread access for the same object.
+    * Using syncronization we can avoid Thread race condtition / Data Inconsistency problem.
+    * We can acheive syncronization by using keyword called as synchronized.
+    * synchronized is a keyword as well as a modifier also.
+    * By using synchronized keyword we can create thread safe method.
+    * synchronized keyword is only used for methods and blocks.
+
+-> Thread safe methods - Method accessed by only one Thread at a time.
+-> Object level lock is created when we are making non static method as synchronized method.
+-> Class level lock is create when we are making static method as synchronized method.
+
+DeadLock :- Two Threads waiting for wach other.
+    * DeadLock also known as infinite waiting of a thread.
+    * There is no resolution solution for DeadLock.
+    * because of synchronized keyword threads are going to DeadLock.
+    * we can avoid DeadLock by using inter thread communitation.
+
+Interthread communitation : The communitation between two threads.
+    * By using wait() and notify() we can achieve inter thread communitation.
+    * By using Interthread communitation we can avoid some deadlock situation.
+    * Interthread communitation is also known as consumer-producer relation.
+
+    Methods used are :
+        -> wait()
+        -> notify()
+        -> notifyAll()
+
+                wait()                                                              sleep()
+    1. wait() is method of object class.                               sleep() is method of thread class
+    2. wait() is a non static method.                                  sleep() is a static method
+    3. wait() can be used inside syncronized context only.             sleep() can be used inside any method block
+    4. wait() will release the thread lock.                            sleep() will not release any thread lock.
+    5. wait() have 3 overloaded methods.                               sleep() also have 3 overloaded method.
+    6. wait() is associated with notify().                             sleep() is not associated with any method.

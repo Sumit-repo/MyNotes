@@ -1,0 +1,10 @@
+Association
+An entity communicating with other entity through objects is known as association
+    * It is also known as has-a-relationship
+    * Association is of two types.
+        1. Aggrigation
+            * Declaring the ref of one class inside another class is known as Aggrigation.
+            * The existence of a container object is not completely dependent on the existence of contained object.
+        2. Composition
+            * Composition is a type of Aggrigation.
+            * The existence of the container object is completely dependent on the existence of contained object.

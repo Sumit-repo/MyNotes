@@ -1,0 +1,81 @@
+Exception : Unexpected events which arises at runtime, which affects normal execution flow is called as Exception.
+When Unexpected events arises JVM creates an Object of type Exception and throw. The thrown Exception Object should be handled, otherwise 
+execution will be terminated immediatly.
+
+//Syntax for try clause, it should be written with catch or/and finaly clause
+try{
+    //statement which might throw
+    //an exception (risky statement)
+}
+catch(Exp e){  //variable is used to catch the thrown exception Object.
+    //statement which executes(recovery logic)
+    //it runs only when there is an exception in try block.
+}
+catch(Exp e){  //variable is used to catch the thrown exception Object.
+    //statement which executes(recovery logic)
+    //it runs only when there is an exception in try block.
+}
+catch(Exp e){  //variable is used to catch the thrown exception Object.
+    //statement which executes(recovery logic)
+    //it runs only when there is an exception in try block.
+}
+
+Throwable
+    - Error
+        > StackOverflowError
+        > OutOfMemoryError
+        > VirtualMachineError
+
+    - Exception
+        > FileNotFoundException |
+        > SqlException          | Checked Exception
+        - RuntimeException
+            > ArthimeticException   |
+            > NullPointerException  | Unchecked Exception
+            > ClassCastException    |
+
+A try can have more than one catch, catch block order should be from sub type to super type.
+
+e.printStackTrace() : 
+    1. it will print the location of exception (class from where the exception is generated), then
+    2. it will print the message of exception, then 
+    3. the line from where you are getting exception.
+
+* When there is an exception in a method, it will search for a handler (catch block) in that method.
+* if handler is not available or of other type is available then,
+  exception is passed to calling method and current method will be terminated immediatly.
+* this proccess continues until exception finds handler or otherwise exception will reach to JVM.
+* In JVM there is default handler which prints StackTrace and exicution will be terminated.
+
+Throw keyword :     -> Throw keyword is used to throw an exception explicitly.
+                    -> Throw can be used to throw checked/Unchecked exceptions or Error.
+                    -> Using throw keyword only one throwable Object can be thrown.
+                    -> Throw keyword is used within a method body/implementation.
+
+Throws keyword :    -> Throws is used to delcare checked exception if it is not handled.
+                    -> Throws is used to delcare only checked exceptions.
+                    -> Using throws keyword multiple checked exception can be delcared
+                    -> Throws keyword is used on the method signature.
+
+Syntax :
+    throw new Exception(); or,
+    Throwable e;
+    throw e;
+
+Exception : 
+1. Checked Exception : Exception which are sub-class to Exception class but not sub-class RuntimeException Class are known as Checked exceptions.
+    -> For checked exceptions compiler checks for handler at compile time.
+    -> If checked exception is not handled using try catch then it must delcared using throws keyword.
+
+2. Unchecked Exception : Exception which are sub-class to RuntimeException class are known as Unchecked exceptions.
+    -> For Unchecked exceptions compiler doesn't checks for handler at compile time.
+    -> Providing a try catch for Unchecked exception is not mandatory.
+
+Finally : Finally block can be written along with try/try catch
+    ->  Finally statement executes whether exception is thrown or not, whether thrown exception is handled or not.
+    ->  Generally a cleanup statement such as closing database connections, closing the stream, releasing costly resources will be
+        written inside the finally block.
+    
+    When Finally doesn't executes?
+    ->  When Object of type Error is thrown.
+    ->  When System.exit() method is called. 

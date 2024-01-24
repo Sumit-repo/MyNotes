@@ -1,0 +1,8 @@
+Hashing  is a algorithm used to store elemets based on hash code.
+    * Every object has unique hashcode.
+    * we will get hashcode by using hashcode().
+    * in some pre defined class hashcode and equals method is overridden. eg. String class
+    * in some user defined class we have to override hashcode method.
+    * hashcode() is developed following below conditions.
+        -> if two objects are equal defenetly hashcode should be same.
+        -> if any two objects have equal hashcode they may be same object or maynot be.

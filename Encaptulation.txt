@@ -1,0 +1,20 @@
+Data Encaptulation/ Data hiding/ Information Hiding.
+    * It is core piller of OOPS 
+    * Wrapping the Data member and its member function into a single unit class is known as Data Encaptulation.
+    * To create efficient data encaptulated class we should declare the data member as private.
+    * A public method is defined or created to fetch the value of a private data member known as getter method or acceser.
+    * A public method is defined or created to set the value of a private data member known as setter or mutator.
+
+    POJO - plain old java object
+
+    Applications of data encaptulation - 
+        * The complete control of the data member is within the class.
+        * We can provide read only access or write only access or both read and write access for the private data member.
+        * Any changes in the internal storage of the class will not affect the end user code.
+
+    Singleton class - A class which consists of atmost one object is known as Singleton class.
+        * Singleton class is one of the design pattern in java.
+        * To create a Singleton class we can achieve either early Instantiation or lazy Instantiation.
+        * Declare a static variable of class type,
+        * create a private constructor,
+        * Define a factory method which return atmost one object.

@@ -1,0 +1,230 @@
+Collection framework : Collection is a group of objects in single unit and framework is a readymade architecture.
+Collection framework has inbuilt classes and inbuilt interfaces.
+
+Sterio types(<<  >>) is used to denote interface.
+Collection is a predefined interface present in java.util package. It was introduced in JDK 1.2.
+Collection are pure object oriented they dont use any primitive data type.
+But while retriving data you will get primitive type data.
+
+Why we use Collection framework?
+-> To overcome disadvantages of Array,
+-> Heterogenous type, 
+-> Dynamic size,
+-> predefined methods,
+-> It supports Generics.
+
+Methods : 
+    -> add() -
+    -> addAll() - 
+    -> remove() - 
+    -> removeAll() -
+    -> contains() -
+    -> contailAll() -
+    -> size() -
+    -> clear() -
+    -> iterator() -
+
+<<iterable>>
+    -> <<Collection>>
+        -> <<List>>
+            -> ArrayList
+            -> Vector
+                -> Stack
+            -> LinkedList
+        -> <<Queue>>
+            -> <<Deque>>
+                -> ArrayDeque
+            -> PriorityQueue
+        -> <<Set>>
+            -> <<SortedSet>>
+                -> TreeSet
+            -> HashSet
+                -> LinkedHashSet
+    
+    HashBased Collection :
+        - HashSet
+        - LinkedHashSet
+        - Hashmap
+        - LinkedHashmap
+        - HashTable
+
+<Generics> : Generics is a important feature of Collection framework introduced in JDK 1.5.
+    * Generic is non-primitive type.
+    * Mainly Generic are used in Collection.
+    * Generics is not supported for arrays.
+    * We can indicate Generics by using Angular braces <E>, E represents element type of data.
+    * By using Generics we can achieve typesafetyness in Collection.
+    * By using generic we can avoid we can acoid unnecessary typecasting/downcasting.
+    * We can use Generics type for classes also.
+    * If we dont provide any specific generic type, defaultly it will consider object type as generic.
+-----------------------------------------------------------------------------------------------------------------
+List interface : List iws a predefined sub-interface of Collection.
+    * It was introduced in JDK 1.2.
+    * present in java.util package.
+
+    List specification : 
+    * It follows insertion order.
+    * It allows operation of Duplicates data.
+    * It allows operation of null as a value.
+
+    List L = new ArrayList();
+    List L = new Stack();
+    List L = new Vector();
+    List L = new LinkedList();
+
+Differences between List and Set.
+    -> List follows insertion order but set does not follow insertion order.
+    -> List allows operation on duplicate data but we can have duplicate data in set.
+    -> we can have multiple null in list but in set we can have only one null.
+
+ArrayList : ArrayList is a predefined sub-class of List interface.
+    * It was introduced in JDK 1.2.
+    * present in java.util package.
+    * ArrayList impliments Clonable, Serializable, RandomAccess.
+    * ArrayList having 3 constructors
+        -> ArrayList(){}
+        -> ArrayList(int initial_capacity){}
+        -> ArrayList(int initial_capacity, int incrimental_capacity){}
+    * ArrayList initial capacity is 10;
+    * Incimental capacity formula is ((current_capacity * 3)/2)+1
+    * Underlined D.S is resizable/growable array.
+
+    Specification of ArrayList : 
+        -> Array is index based Collection.
+        -> It follows insertion order.
+        -> It allows operation of Duplicates data.
+        -> It allows operation of null as a value.
+
+Vector : Vector is a predefined sub-class of List interface.
+    * It is a legacy class (class added into java in 1st version).
+    * It was introduced in JDK 1.1.
+    * present in java.util package.
+    * Vector having 4 constructors
+    * initial capacity 10
+    * Incimental capacity = current_capacity * 2.
+    * Vector impliments Clonable, Serializable, RandomAccess.
+
+Differences between ArrayList and Vector
+                ArrayList                                   Vector
+    -> ArrayList was introduced in JDK 1.2          Vector introduced in JDK 1.1.
+    -> ArrayList is multi threaded                  Vector is single threaded.
+    -> ArrayList methods are not syncronised        Vector methods are syncronised.
+    -> Performancewise ArrayList is faster          Vector is comparitively slower performancewise.
+    -> ArrayList have 3 constructors                Vector have 4 constructors.
+
+Stack : Stack is a predefined sub-class of List interface.
+    * It is present in java.lang package.
+    * Stack follow First-in-last-out (FILO).
+
+LinkedList : it is predefined sub-class of List interface.
+    * It was introduced in JDK 1.2.
+    * Present in java.util package.package
+    * It is node based Collection.
+    * Internally the data is stored in the form of nodes.
+    * There is no initial capacity in LinkedList.
+    * LinkedList have only two constructors.
+    * LinkedList impliments Clonable, Serializable interfaces.
+    * LinkedList in not a index based Collection.
+    * It follows all the specification of List.
+
+Differences between ArrayList and LinkedList
+                ArrayList                                   LinkedList
+    -> ArrayList is index based Collection          LinkedList is node based Collection.
+    -> ArrayList is continuos block of memory       LinkedList is not continuos block of memory.
+    -> ArrayList impliments resizable/growable      LinkedList Internally impliments Double LinkedList.
+    -> ArrayList have 3 constructors                LinkedList have 2 constructors.
+----------------------------------------------------------------------------------------------------------
+Queue : It is a sub interface of Collection interface.
+    * Present in java.util package.
+    * introduced in JDK 1.2
+    * Queue have sub-interface 
+        - Deque
+    * implimentation class of Queue
+        - ArrayQueue
+        - PriorityQueue
+        - LinkedList
+    * Queue follows FIFO (First-in-first-out)
+
+Differences between Queue and Deque.
+    - Queue interface is provides methods for single ended queue.(We can add elements from only one end)
+    - Deque interface is provides methods for double ended queue.(We can add element from either end)
+
+PriorityQueue : it is one type of single ended queue.
+    * It will add elements to queue based on priority.
+    * It will not follow order FIFO order9
+    * Priority depends on ascending order.
+
+Note : 
+    * Duplicates are allowed in queue.
+    * We cant insert null.
+    * Internally PriorityQueue used CompareTo().
+-------------------------------------------------------------------------------------------------------------------------
+Set : it is a predefined sub-interface of Collection interface.
+    * It was introduced in JDK 1.2.
+    * It is present in java.util package.
+    
+    Specification of Set
+    * Not follow insertion order.
+    * Does not allows duplicate.
+    * We can have only one null.
+
+TreeSet : it is a predefined sub-class of SortedSet interface.
+    * It was introduced in JDK 1.2.
+    * Present in java.util package.
+    * TreeSet can store only same type of data.
+    * Underlined DS of TreeSet is Binary Search Tree.
+    * In TreeSet element is added in ascending order. (a-zA-Z)(0-9)
+    * TreeSet Internally used Comarable and Comparator.
+    * We cant insert null to TreeSet.
+
+HashSet : It is a predefined sub-class of set interface.
+    * It was introduced in JDK 1.2.
+    * present in java.util package.
+    * Underlined DS is HashTable.
+        - HashTable is developed using Hashing technique.
+    
+    HashSet -> Sub-Class
+        |_ HashTable  -> DS
+                |_ Hashing -> Process name
+                        |_ HashCode -> Method name
+
+    * HashSet have 4 constructors.
+    * HashSet impliments Serializable and Clonable interfaces.
+    * insertion and deletion operation are based on HashCode.
+    * HashSet follows all 3 Specification of set.
+    * Elements are arranged in random order.
+
+LinkedHashSet : It is a predefined sub-class of set interface.
+    * It was introduced in JDK 1.4.
+    * Present in java.util package.
+    * LinkedHashSet works same as HashSet but insertion order is preserved.
+
+--------------------------------------------------------------------------------------------------------------
+<<Iterator>> : It is a predefined interface.
+    * Present in java.util package.
+    * It was introduced in JDK 1.2.
+    * It works for any type of Collection like list, set and queue.
+    * It is one type of cursor.
+    * It is also known as universal cursor.
+    * By using iterator we can iterate Collection uni-directional.
+    * We can iterate only iterable type Collection.
+
+    Methods of iterator 
+        - hasNext() -> boolean
+        - next() -> object
+        - remove() -> void
+
+<<ListIterator>> : predefined sub-interface of Iterator interface.
+    * present in java.util package.
+    * it was introduced in JDK 1.2.
+    * By using ListIterator we can iterate list type Collection only.
+    * we can iterate uni-directional and bi-directional also.
+    
+    Methods of ListIterator.
+        - hasNext() -> boolean
+        - next() -> object
+        - hasPrevious() -> boolean
+        - previous() -> object
+        - remove() -> void
+        - nextIndex() -> int
+        - previousIndex() -> int

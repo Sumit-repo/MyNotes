@@ -1,0 +1,42 @@
+<<Map>>
+    - <<SortedMap>>
+        - TreeMap
+    - Hashmap
+        - LinkedHashmap
+    - HashTable
+
+Map : it is a set of Key-value pairs.
+    * it is a predefined interface present in java.util package.
+    * Map is not a sub-type of Collection interface.
+    * Map contains unique keys, we cant have duplicate keys in Map.
+    * key cant be a null.
+    * insertion, updation and deletion based on key.
+    * value can be duplicate.
+
+Hashmap : It is a predefined sub-class of Map interface.
+    * It was introduced in JDK 1.2.
+    * present in java.util package.
+    * It underlined DS is HashTable.
+    * It doesnt follow insertion order.
+    * duplicate key are not allowed.
+
+LinkedHashmap : It is a predefined sub-class of Map interface.
+    * It was introduced in JDK 1.2.
+    * present in java.util package
+    * It is same as HashMap but it preservs insertion order.
+
+TreeMap : It is a predefined sub-class of SortedMap.
+    * TreeMap Mainly used for sort element based on key values.
+    * It Internally uses Comarable and Comparator interfaces to sort element.
+    * We cant insert one null also.
+    * We can store only homogenious type data 
+
+            HashMap                                 HashTable
+It was introduced in JDK 1.2 util.       It was introduced in JDK 1.0 util(legacy class).
+Multi threaded.                          Single threaded.
+Not syncronised                          syncronised.
+faster                                   slower
+Hashing technique                        Hashing technique
+We can have one null                     No null allowed
+Initial Capacity is 16                   Initial Capacity is 11
+Load Factor is 75%-----------------------------------------------------------------------

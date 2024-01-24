@@ -1,0 +1,35 @@
+Stream-API
+    It is used to perform large no of operation on collection object/arrays
+    -> It was introduced in java 1.8.
+    -> whenever new Stream is created, old Stream object will get destroyed. this improves memory managemnt.
+    
+    -> Stream classes for primitive datatypes 
+        1. IntStream
+        2. DoubleStream
+        3. LongStream
+
+Inbuilt methods of Stream API
+    1. stream() : It converts collection object/arrays object elements into Stream.
+    2. map(Function f) : It is used to perform operations on collection object.
+    3. filter(Predicate p) :  It is used to filter elements from stream.
+    4. concat() : It is majorly used to merge 2 arrays.
+    5. max()/min() : It returns maximum/minimum elements from Array or collection object.
+    6. sorted() : It is used to sort the elements in Ascending order.
+    7. distinct() : It is used to remove duplictes.
+    8. collect() : It is used to collect the elements from stream.
+    9. Collectors() : collectors is a class, it has static methods like toList(), toSet() etc which converts stream to collection type object.
+    10. toArray() : It is used to convert collection elements into array.
+    11. count() : It returns the number of elements(size) of the stream.
+
+Major Functional Interfaces in Stream Api :-
+    1. Consumer Interface: - it is a functional interface which has only one abstract method called as consume().
+    consume() consumes (accepts) the data but does not return anything
+    2. Predicate Interface:- it is a functional interface which has only one abstract method called as test().
+    test() accepts the condition and returns boolean.
+    3. Function Interface:- it is a functional interface which has only one abstract method called as apply().
+    apply() accepts the operation.
+
+DATE AND TIME API
+    -› Before java 1.8, we had calendar, date, timestamp etc • the performance of these classes was not efficient.
+    -> In java 1.8, Date and time api was introduced. the performace of the classes and interfaces of Date and time api is efficient.
+    -> Date and Time api was developed By 300A org, hence it is also called Joda api.

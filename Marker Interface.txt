@@ -1,0 +1,15 @@
+Marker Inteface.
+   * Marker interface is an empty interface.
+   * it is also known tagged interface.
+   * @Marker interface is used to provide special information to JVM.
+   * Marker interface can be user defined and also pre-defined.
+
+It is of two types :
+    1. Pre-defined
+        -> Serialization - Serialization 
+            java.io
+        -> RandomAccess - searching code fast
+            java.util
+        -> Clonable - cloning
+            java.util
+    2. User-defined

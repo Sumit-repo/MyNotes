@@ -1,0 +1,168 @@
+API : Application Programming Interface (API) is a software mediator which allows two applications to communicate with each other.
+
+JDBC : Java Database Connectivity (JDBC) is an API which is used to connect & communicate java application with database.
+
+Note : JDBC is the only way to connect java application with the database. JDBC is an API which is the collection of classes and interfaces.
+
+JDBC Driver : JDBC Driver is a software component which helps JDBC to connect java application with the database.
+
+Why JDBC requires JDBC Driver?
+    -> JDBC has interfaces, The implementation for the JDBC interfaces are provided by JDBC Driver.
+    JDBC uses different JDBC drivers for different databases. JDBC drivers are provided by database vendor.
+
+Database Vendor : A Database Vendor is the company which provides database to its users on license.
+    eg. MySql, MS-Sql, Oracle SQL
+
+Architecture of JDBC
+    Java Application ------> JDBC (interfaces & classes) ----------------------> JDBC Driver ------> Database
+
+Types of drivers - 
+    1. JDBC - ODBC Driver : These are Type-1 drivers. It was developed in C & C++ language.
+        Limitations
+        -> JDBC - ODBC Driver is platform dependent.
+        -> It is only supported only by windows OS.
+    
+    2. Native-API Driver : These are Type-2 drivers.
+        Limitations 
+        -> Native-API driver is paltform dependent. Whenever we change operating system we have to change Native-API driver.
+    
+    3. Network-Protocol Driver : These are Type-3 drivers. It is built on java language. It is database independent
+    and  platform independent.
+        Limitations
+        -> In Network-Protocol Driver, to connect java applications with database we have to take help of additional tools
+        called connectors.
+    
+    4. Thin Driver : These are Type-4 drivers. It is purely on Java Programming language. It is database dependent and 
+    platform independent.In this driver we can connect our java application with database without connecting any
+    additional tool.
+
+JDBC API has 2 packages.
+    1. java.sql
+    2. javax.sql
+
+All the JDBC classes and interfaces are located in java.sql package.
+
+Key classes and interfaces of JDBC api :
+    > DriverManager class
+    > Connection interface
+    > Statement interface
+    > PreparedStatement interface
+    > ResultSet interface
+    > ResultSetMetaData interface
+    > CallableStatement interface
+
+Steps in JDBC :
+    To connect our java application with our database, we have to follow these steps
+    1. Load an Register the driver
+        > Loading the driver - 
+            Since JDBC drivers are not inbuilt in java, we need to add in our application from external source.
+            The process of loading JDBC driver into java application is called Loading the driver.
+
+        > Resigtering the driver -
+            In JDBC, we have a interface called Driver. we have to load Driver class (implementing class of Driver interface of JDBC) object inside JDBC memory,
+            Driver interface gets the implementation and thus internally all the remaining JDBC interfaces will be implemented by JDBC driver,
+            this process is called as registering the driver.
+
+        To register the driver we use :     
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+    2. Establish the connection
+        > In JDBC, To establish the connection between java application and database we have to instantiate Connection Interface,
+        so we take help of DriverManager helper class. DriverManager provides a static method 
+        "getConnection(String url, String user, String password)" which returns Connection object.
+
+        internally getConnection validates url, username & password with the database, after validation if credentials are correct
+        getConnection establishes connection successfully else SQLException is thrown.
+        
+    3. Create Statement
+        > Statement is used to send our requirements from java application to database. 
+        To Create Statement, we need to instantiate Statement interface.
+        createStatement() method of Connection interface is used to create the Statement.
+
+    4. Execute Statement
+        > Execute Statement is the process of carrying queries to the database and executing then.
+
+        To execute Statement we have 3 methods. 
+            1. execute(String query)
+                > It carries query to the database and execute the query. 
+                > The return type of this method is boolean.
+                > It supports any type of query.
+
+            Note :  It always returns false and true when select query is written.
+
+            2. executeUpdate(String query)
+                > It carries query to the database and execute the query. 
+                > The return type of this method is int.
+                > It does not supports DQL query.
+
+            Note : It returns the no. of rows that are getting affected.
+
+            3. executeQuery(String query)
+                > It carries query to the database and execute the query. 
+                > The return type of this method is ResultSet.
+                > It supports only DQL commands.
+
+            Note : It is used to fetch data from database.
+
+    5. Processing the resultset
+        > ResultSet is an interface which acts as container to store the result which is fetched from the database.
+
+        ResultSet and its methods :
+            1. next() : The return type of next() is boolean, it moves the cursor to next row from current row. 
+            if cursor points to any data then it returns true else false.
+
+            2. getInt() : The return type of getInt() is int. it is used to fetch int type of data from resultset object.
+
+            Note :  All return type of all getter method (getString(), getDouble(), getBoolean(), getLong() etc) 
+            of resultset are used to fetch respective type of data.
+
+            3. isBeforeFirst() : The return type of isBeforeFirst() is boolean. it checks whether the data is present in resultset. 
+            if present it returns true else false.
+    6. close the connection
+
+What is a jar file?
+    A jar file is a compressed collection of classes.
+
+Note : JDBC driver will be in the form of jar file. JDBC driver is a jar file which has compressed collection of implementing classes.
+
+What is dependency?
+    A dependency is the link for jar file.
+
+                            Statement                                            PreparedStatement
+                            
+    1. Whenever we create Statement, programmer need not to          Whenever we create PreparedStatement, programmer definitly has to
+    pass any query.                                                  pass a query.
+
+    2. Statement is never associated with one particular query.      PreparedStatement is always associated with one particular query.
+
+    3. Statement is used Whenever we need to execute different       PreparedStatement is used to execute same query multiple times.
+    types of queries at same time
+
+    4. In Statement, each query is compiled.                         In PreparedStatement, the compilation is done only once.
+
+    5. Statement is not faster than PreparedStatement                PreparedStatement is faster than Statement.
+
+What is placeholders or delimiters?
+-> placeholders in jdbc is used to assign values dynamically in a query.
+
+Note :- placeholders are used in PreparedStatement to perform operations dynamically.
+
+Batch Processing
+Batch Processing is the process if sending multiple sql queries as one request to the database and after excution submitting then as one
+response back to the user.
+
+what is a batch in jdbc?
+A batch is a container which is used to hold multiple queries.
+
+Advantage of Batch-Processing
+1. Batch processing reduces network traffic in database.
+2. Batch processing improves the efficiency of application.
+3. Batch processing is majorly used to execute huge number of queries at the same time
+
+Disadvantage of Batch-processing
+1. It doesn't supports DQL commands.
+    as Batch-Processing internally uses executeUpdate() method to execute the queries, and executeUpdate() doesn't support DQL commands.
+
+Important methods in Batch-Processing :
+1. addBatch() :-
+2. executeBatch() :-

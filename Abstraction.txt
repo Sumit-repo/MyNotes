@@ -1,0 +1,23 @@
+Abstraction - abstraction is one of the core feature/piller of OOPS.
+    * The process of Hiding the implementation details from the user and providing only the behaviours(functionality to the user) 
+    is known as Abstraction.
+
+        * Abstraction is also known as implementation Hiding
+        * Abstraction can be achived in two ways.
+             1. By using Abstract class
+             2. By using interface
+                * Interface is a type which consist of only Abstract methods.
+                * In interface we delclare only those methods (behaviour) which is requied for the user.            
+                * service provider will provide the implementation for Abstract methods declared in the interface.
+                * For users the details in the interface is enough to use the user code.
+                * service provider code and user code are detached directly but connected through interface.
+                * To develop the user code it is not requied to know the service provider code.
+                * At Runtime JVM exicutes the implementation based on the instance created.
+    
+    Advantages of interface over Abstract class.
+        * A class can extend an Abstract class.
+        * A class can implement more than one interface.
+        * A class can provide implementation for multiple types if it is interface parent type or super type.
+    
+    Advantages of Abstract class over interface.
+        * Abstract class is used to provide partial information about a particular type.

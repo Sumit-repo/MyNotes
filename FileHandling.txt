@@ -1,0 +1,51 @@
+Operation to perform on file.
+->  Read
+->  Write
+->  Create
+->  Delete
+->  Update
+
+Stream : Stream is a sequence of data(A group of data).
+    -> Character Stream - A group of Character oriented type data. Eg. Reader and Writer classes.
+    -> Byte Stream - A group of Byte oriented type data. Eg. Input Stream and Output Stream classes.
+
+FileInputStream : 
+(Reading Data)
+    -> present in java.io package
+    -> sub-class of InputStream class
+    -> It is one type of byteStream class
+    -> read(), it will return -1 when file reaches end.
+
+FileOutputStream :
+(Writing Data)
+    -> present in java.io package
+    -> sub-class of OutputStream class
+    -> It is one type of byteStream class
+    -> write(),
+
+BufferedReader : it is a reader type class.
+    -> present in java.io package.
+    -> By using BufferedReader we can read the data more efficiently.
+    -> In BufferedReader first the data will store into a temporary memory, that temporary memory is called as buffer.
+    -> inital buffer capacity is 8172 character.
+    -> performance wise BufferedReader is faster.
+    -> By using BufferedReader we can read the data line by line.
+
+Serialization : The process of converting Object to byteStream format.
+    * byteStream is a data format similar to byte code.
+    * byteStream data can be stored in database, file or in a secondary memory also.
+    * by using Serialization we can protect Object states.
+    * we cant Serialization static members.
+    * we can Serialization only serializable type Objects.
+
+De-Serialization : The process of converting byteStream to Object.
+    * 
+    ObjOutputStream (obj-byte)
+    ObjInputStream (byte-obj)
+
+Advantage of Serialization 
+    -> we can send Object information through network.
+    -> Easily we can sent Object from one JVM to another JVM.
+    -> Easy to Create new Object for new user.
+
+transcient is a keyword which is used to make variable non serializable type.

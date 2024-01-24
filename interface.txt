@@ -1,0 +1,25 @@
+Q. Why multiple inheritance isn’t supported through classes in java?
+	If a class extends more than one super class, if all super classes provide same behaviour with different implementation then JVM doesn’t know which method implementation to call for the sub class creating an ambiguity error
+	This ambiguity error is known n as diamond problem.
+	Since there is no solution for this java doesn’t support multiple inheritance through classes in java
+
+Interface
+•	Interface is a non-primitive type.
+•	It is an interface (mediator) between service provider and user program.
+•	Interface is used to achieve multiple inheritance.
+•	It is used to achive abstraction.
+•	It is used to achive loose coupling.
+•	Interface consists of static context and abstract methods.
+•	In interface only public, static and final data members are allowed by default the data members are public static final.
+•	Till JDK 1.7 interface allows only public and abstract method
+•	By default interface methods are public and abstract.
+•	Interface do not have constructor.
+•	Interface cannot be instantiate.
+•	Interface reference can’t be used.
+•	Interface keyword is used to define an interface.
+•	From JDK 1.8 interface consists of concrete method known as default method and static method.
+•	From JDK 1.9 interface consists of private method.
+•	A class which overwrite the abstract method of an interface is known as implementation class implement keyword is used.
+•	An interface more than one implementation class can implement the same interface.
+•	An implementation class can provide implementation for more than one interface.
+•	Implementation class must provide implementation for all the abstract method of an interface, otherwise the implementation class become abstract.

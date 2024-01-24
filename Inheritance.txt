@@ -1,0 +1,101 @@
+
+Inheritance (is-a-relationship) - creating new classes based on existing one.
+
+* The dependency between two objects is similar like parent and child is known as is-a-relationship
+* is-a-relationship is also known as Inheritance.
+* We can achive inheritance by using 'Extends' keyword.
+* One class can Extends only one class at a time.
+* In is-a-relationship child class gets all the properties of parents and child can have its own properties.
+
+
+1. Single level inheritance - creating one class based on existing one by using extends keyword. 
+
+        A <--- B 
+
+2. Multi level inheritance - one class acting as child and parent.
+* Inheritance more then one level is also known as Multi level inheritance.
+
+        A <--- B <--- C
+
+3. Hirarcial inheritance - one parent class have more than one child.
+
+     D ---> A <---B
+            ^
+            |
+            C
+
+4. Multiple inheritance - one child class have more then one parent.
+* Through classes Multiple inheritance is not supported in java.
+
+        A ---> B <--- C
+
+5. Hybrid inheritance - it is a combination of two different inheritance.
+* Hybrid inheritance is not supported in java.
+
+            E
+            ^
+            |
+     D ---> A ---> B
+            ^
+            |
+            C
+
+Note : if we are trying to achieve Multiple inheritance or Hybrid inheritance Through classes we will get diamond problem.
+
+* Inheritance is Unidirectional.
+* It is efficient to create the objects of sub class.
+* Static members and constructors do not participate in inheritance.
+* Sub-class is a covarient of super-class & super-class is a contravarient of sub-class.
+        eg. All dogs are animals but all animals are not dogs.
+* Changes made in sub-class won't affect the super-class.
+
+Super keyword
+-------------
+Super keyword is used to access the properties created with the same name as in sub class from the immediate super class.
+* Super is a keyword used to refer parent class properties in child class.
+* By using super keyword we can call super class methods and variable.
+* If parent class and child class having same members with same name in this situation we can refer the parent class members using super keyword.
+* We cant use super keyword in Static context.
+
+Call to super - super()
+-----------------------
+super() is a constructor call statement.
+* By using super() we can call parent class constructor.
+* Every constructor has super() by default in first line of constructor.
+* super() should be the first line of the constructor.
+* super() should be used only for constructors not for methods.
+
+                        super()                                                                   this()
+1. super() is used to call the immediate parent class constructor       this() is used to call the another constructor in same class
+2. super() is used in first line of the constructor.                    this() is used in first line of constructor.
+3. default super() it will always call No-args constructor of
+   parent class
+4. we cant use super() and this() in same constructor.
+
+objects
+-------
+* Object class is a predefined Non-premitive type.
+* Object class is the supermost class in the entire java class hirarchy.
+* It is availble in java.lang package.
+* Every class created in java is a sub class of object class.
+* For every sub class extends object is internally executed and it could be explicit also.
+* Object class has only one constructor which is default constructor.
+* Object class has 11 methods -
+        1. public String toString()
+        2. public int hashCode()
+        3. public boolean equals(Object obj)
+        4. public final void wait()
+        5. public final void wait(long m)
+        6. public final void wait(long m,int n)
+        7. public final void notify()
+        8. public final void notifyAll()
+        9. public final class getClass()
+        10. protected void finalize()
+        11. protected object clone() 
+
+why multiple inheritance is not supported in java:
+ * if a class extends more then one super class, if all super classes provide same behaviour with different implementation,
+   then JVM doesn’t know which method implementation to call for the sub class creating an ambiguity error.
+
+ * This ambiguity error is also known as diamond problem. since there is no solution for this, java doesn’t supported multiple
+   inheritance Through classes.

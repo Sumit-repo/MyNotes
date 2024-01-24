@@ -1,0 +1,30 @@
+Comparable - It is a pre-defined functional interface.
+    * it is present in java.lang package
+    * Comparable interface have a method named compareTo(object o)
+    * By using Comparable interface we can sort collection of objects.
+    * sort method internally uses compareTo method.
+        * In compareTo method we can compare two objects if the current object is greater than passed object.
+            then we have to return +ve value
+        * If current object is lesser than passed object then we have to return -ve value.
+        * Otherwise return 0.
+
+    * By using Comparable we can achive single sorting sequence.
+    (We can compare only one attribute at a time).
+
+
+    To compare two string values we can use string class compareTo method which is already overridden.
+        In java String class implements Comparable interface.
+
+Comparator - It is a pre-defined functional interface.
+    * It is present in java.util package.
+    * Comparator interface have a method named compare(obj 01,obj 02)
+    * By using Comparator we can sort collection of object.
+    * By using Comparator we can achive custom sorting.
+    
+Disadvantages of Comparable:
+    * using Comparable interface we can compare two objects by using one attribute at a time.
+    * default sorting order in objects.
+
+
+Comparable 
+    * It follows single sorting sequence

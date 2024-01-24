@@ -1,0 +1,312 @@
+                                   memory Allocation
+                                   ------------------
+
+NOTE : Class loading process - Copying libraries from primary memory to secondary memory.
+The class loading process in Java is the process of making a class available to the Java Virtual Machine (JVM) so that it can be used.
+The JVM uses a class loader to load classes from various sources, such as the file system, the network, or a database.
+----                                
+                                    ----------------
+                                    Static variables
+                                    ----------------
+    * memory is allocated for static variable during class loading time in static area.
+    * For static variable memory is allocated only one time.
+    * We can initilize static variable using static blocks.
+    * Static variable also known as class variables.
+
+                                    ---------------
+                                    Local variables
+                                    ---------------
+    * For local variables memory was allocated in stack memory during program execution time.
+    * Local variables memory will be allocated every time method is called.
+    * Local variables does not have any default values.
+
+                                  --------------------
+                                  Non-Static variables
+                                  --------------------
+    * memory will be allocated during object loading time for non static variables.
+    * For non static variable memory will be allocated every time instance is created.
+    * Non static variable is also known as instance variable.
+    * memory will be allocated in heap area for non static variable.
+
+OOPS - Object Oriented Programming Language
+-------------------------------------------
+    -> Using Java we are going to represent real-world objects. 
+    -> Java is not 100% object Oriented Programming Language because of primitive datatype.
+    -> We can make it 100% OOPS by using Wrapper classes.
+
+Class - Class is a blue print/templete of an object.
+
+class(logical)
+--------------
+-static data members (Static variable)
+    static int i;
+-Static members functions (Static method)
+    public static void m1(){
+
+    }
+-Static blocks (static mutliline initilize)
+    static{
+
+    }
+
+Object - Every real world entity is one object.
+    * Every Object has two properties.
+        1. States (variable)
+        2. Behaviour (Method)
+
+Object - nail
+    States - size,weight,price
+    Behaviour - kill, hang object, poke, Existence of chiristanity.
+
+Object(realtime(physical))
+--------------------------
+-Non static variable/data members/instance variable(object state)
+    int j;
+-Non Static member functions/method/instance method(object Behaviour)
+    public void m1(){
+
+    }
+-Non static blocks/instance block (Non static mutliline initilize)
+    {
+
+    }
+
+Object Creation - 
+    new A();
+for using the object we must store it in a reference variable.
+    A a1 = new A();
+
+* objects are stored in heap memory.
+* local variables are stored in stack area.(LIFO - last in first out)
+
+                            JDK(Java Development Kit)
+                _____________|_____________
+                |                         |
+            Java c compiler              JRE(Java Runtime Enviroment)
+                             _____________|_____________
+                             |                         |
+                        Java standard library         JVM(Java Virtual Machine)
+                                     __________________|____________________ . . . so on.
+                                     |            |            |           |
+                                    JIT       classloader   Garbage      Thread
+                                  compiler                 collector    scheduler
+
+* .java -> .class(byte code)
+    JRE coverts .java to .class/byte stream.
+    JVM collects .class and gives to JIT(just-in-time).
+    JIT coverts into 0s and 1s.
+
+    javac a.java -> class loading.
+
+* During classLoading all static members memory gets allocated.
+        -> We can access static member
+        -> Class name is used to access static member.
+* During Instantiation(object Creation) all non static members memory gets allocated.
+        -> We can access static member.
+        -> We can access non-static member.
+        -> Object/object reference is used to access non static member.
+
+    class A{
+
+        static int j = 1100; //Single line initilizor.
+
+        psvm(){
+            int j = 100; //mutliline initilizor.
+            A a1 = new A(); //object reference variable
+            T t = new T();  
+            sop(new A());
+        }
+    }
+
+    classLoading done once(1)
+    Object Creation done 3 times.
+
+    * Static members gets memory allocated during classLoading.
+    * Non static member gets memory allocated during Instantiation(object Creation).
+    * Class is loaded first and then object's created.
+    * Inside non static methods both static and non static data members can be accessed.
+    * Inside static method stactic data members can be accessed directly but non static members can not be accessed
+    * To access non static data members Inside static methods, create object of the class and access
+
+    * Static variable gets created one copy for whole program.
+    * All the objects of the class will be sharing the same copy.
+
+    * Non-Static variables have individual copies for individual objects.
+    * Changes made to non-stactic variable of one object will not affect the non static variable of other object.
+
+This(Keyword)
+-------------
+This Keyword is used to point current instance.
+
+    -> This Keyword holds the address of the current object.
+    -> This Keyword is used to access the non-static properties of the class.
+    -> This Keyword can be used Inside non static methods or constructors.
+    -> This Keyword can not be used Inside static methods.
+    -> This Keyword can be used in any line of the non static methods or constructors.
+    -> For non stactic variables this Keyword is internally exicuted.
+    -> This Keyword can be used to refer stactic data members inside non static methods
+
+new ClassName().method()
+* We can call non static method like this too.
+
+Blocks
+------
+    * Blocks are also called as multiline initilizor.
+    * static blocks are exicute when the class is loaded.
+    * Non static blocks are exicuted during Instantiation.
+    * stacic block are exicute only once.
+    * if there are more static blocks they are exicuted sequentially.
+    * Non stacic blocks are initialized for every Instantiation
+    * if there are more than 1 non stacic block they are exicuted sequentially.
+
+    * using static block we initilize stactic data member.
+    * Inside static block non static data members can't be accessed directly.
+    * Non static block is used to initilize non static data members.
+    * Inside non static block we can access both non static and static data member.
+    * Inside non static block we can initilize static data members.
+
+Constructors
+------------
+Constructors is a set of statement that is exicuted when the object is created.
+
+    * It is a special method.
+    * It can have access modifiers(private ,public).
+    * Constructor are used to initialize the object during Instantiation.
+    * Constructor doesn't have any return type not even void.
+    * Constructor is defined using class name.
+    * This Keyword can be used inside constructors.
+    * There are two ways to define a constructors.
+        -> Default Constructor
+            Default constructor doesnt have any argument.
+        -> Parametrized Constructor
+            Constructor with argument is known as Parametrized constructor.
+        -> No Argumented constructor.
+
+Note : if a return type is provided to a constructor java will not throw any error instead it interpretes as non static method.
+
+Private Constructor
+-------------------
+    * If a constructor is declared as private, the constructor is visible only within the class.
+    * objects for a private constructor cannot be created in other classes.
+    * objects can be initialized only within the class.
+    * To create an object we define a helper method known as factory method.
+    * To declare the factory method we should
+        * Declare access modifier as public,
+        * Modifiers are static,
+        * Return type must be class type and
+        * A user defined method name.
+
+Constructor Overloading
+-----------------------
+Having the same constructor name with different argument is known as constructor Overloading.
+
+* Constructor can be overloaded based on the length or types of argument.
+* Method Overloading and constructor Overloading achives compile time polymorphism.
+
+Calltothis - this()
+-------------------
+* this() is used to call a constructor from another constructor. 
+* It's used to pass one constructor value to another constructor with respect to current object and this process is called Constructor chaining
+* We can atmost call one(1) constructor from another constructor.
+* this() should be the first statement of the constructor.
+* this() is used only for constructor not for methods and blocks.
+
+Note : If a class do not have any constructor created/defined by developer
+       then JVM internally creates a constructor known as default constructor.
+
+Final : Final is a Keyword in java which is used to impose restriction on variable, non-static methods and also classes.
+* Final Keyword convets a variable into a constant.
+* Final method can be extended can't be overridden.
+* Final class can't be inherated or extended.
+
+Final Keyword for a variable.
+-----------------------------
+* Final Keyword convets a variable into a constant.
+* Final variables don't have default values.
+* Once final variable is initialized, it can't be re-initialized/re-assigned.
+* Final vaerible can be local, static or non static.
+* Final variable without initialization is known as blank final field.
+* If the blank final field is static, we can initialize using static block.
+* If the blank final field is not static, we can initialize using non static block.
+
+Modifiers 
+    1. Access Modifiers
+    2. Non-Access Modifiers
+
+1. Access Modifiers - Access modifiers in java are used to either increase the security or visiblity of the data members.
+    1. Public - Public is a Keyword in java which allows the member to be accessed within the entire project.
+    2. Private - Private is a Keyword in java which increases the security of a member.
+        - A member declared private can be only accessed within the class.
+        - It cant be accessed even in their sub-classes.
+        - To access private members public methods are defined.
+    3. Protected - Protected Keyword in java allows any class to access within the package,
+        - To access Protected members in other package inhertance is manidatory
+        - Only the sub class members can access the Protected members in other package.
+    4. Package(default) - if a member declared without any access modifier, by default it belongs to package.
+        - these member can be accessed anywhere within the package but in other packages of the project.
+    
+
+Method overridding - Same method with same signature (argument).
+- Changing the implementation of super class in sub class using the same method signature/declaration is known as method overridding.
+- inhertance is manidatory.
+- if the sub class is not intrested with the implementation provided by super class,
+    it will Change the implementation in the sub class using the same method signature known as method overridding.
+
+Annotation - Annotation in java are used to provided some special instruction to JVM.
+- Annotation can be used for - classes, methods, data members, constructors, interfaces.
+- Annotation should start with '@' special character.
+- Annotation 1st letter will be capital(Capitalized) (for premitive).
+
+@Override - @Override annotation is present in java.lang package.
+- this annotation informs J.VM to check proper method overridding.
+- this is not mandatory for overridding. it's just a good practice.
+
+only is two class has same non static method and is-a relation then only its considered to be Method overridding.
+if both has same static method and is-a-relation then its Method Hiding/Shadowing.
+
+Rules of overridding :
+- Only non-static, non-private, non-final method can be overridden.
+- While overridding we can retain the access modifier or use wider access modifier/increase the visiblity of access modifier
+- we cant use weaker access modifier/cant reduce the visiblity of access modifier.
+- while overridding if parent class return type is premitive datatype then sub class return type must be same(even for void).
+- if parent class return type is non-premitive, then sub class return type can be same type or co-variant but not contravarient(other type).
+
+Typecasting - 
+    1. Primitive
+        1. Widening(explicit/implicit)
+        2. Narrowing(explicit)
+    2. Non-primitive
+        1. Upcasting/generalization/object level Widening(explicit/implicit)
+        2. Downcasting/specialization/object level Narrowing(explicit)
+
+    copy constructor - passing object reference as parameter 
+    constructor chaining. - calling one constructor inside another constructor is called copy constructor.
+
+Wrapper Class - 
+
+    Application -
+        1. Serialization
+        2. Collections
+        3. Syncronization
+        4. java.util.package
+
+        Wrapper-class:
+        • int – Integer
+        • float – Float
+        • byte – Byte
+        • short – Short
+        • boolean – Boolean
+        • long – Long
+        • char – Character
+        • double – Double
+
+        • All wrapper classes are final / available in java.lang.package / concrete class.
+        • Wrapper classes are final classes available in java.lang.package.
+        • These classes are predefined concrete classes.
+        • For every primitive data type,there are respective non-primitive class is created by JDK.
+        • Wrapper classes are used to convert primitive to non- primitive and vice-versa.
+        • Converting primitive type- non- primitive types is known as boxing (java 1.1-1.4).
+        • Boxing is done manually till JDK 1.4.
+        • From JDK 1.5 boxing is automated known as auto-boxing.
+        • Converting non-primitive to primitive is known as unboxing (JDK 1.1-1.4).
+        • Unboxing is manual till JDK 1.4 from JDK 1.5 boxing is automated is known as auto-unboxing.

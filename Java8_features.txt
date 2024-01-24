@@ -1,0 +1,86 @@
+The class which is declared inside another class is called as Inner class.
+
+Types of InnerClass :-
+    1. Non-static Inner class
+    2. static Inner class
+    3. Method Local Inner class
+    4. Anonymous Inner class
+
+1. Non-static Inner class :-
+    The class which is declared inside another class without static modifier is called as non-static inner class.
+        * We cant declare static members in non-static inner class but we can access static members from outer class. (Fixed in JDK 16)
+        * non-static inner class is always dependent on outer class object.
+        * when we execute the class which has non-static inner class two class will be generated.
+        * The non-static inner class's class file be saved as outer_class$Inner_class.CLASS
+
+2. static Inner class :-
+    The class which is declared inside another class with static modifier is called as inner class.
+        * We can declare static members and non-static members in static inner class.
+        * static inner class is not dependent (Independent) on outer class object.
+        * Only inner classes can have static modifier, outer classes should not be declared with static modifier.
+
+3. Method - Local Inner Class :- 
+    The class which is declared inside a method is called as Method - local Inner Class.
+        * In java, we cant create nested method, but with the help of method - local inner class we can declare a method inside another method
+        * The method - local inner class can be instantiated within the same method.
+        * Method - local inner class is rarely used inner class, because its scope is restricted to only one method.
+
+4. Anonymous Inner Class :-
+    The class which is declared inside the method without class name is called an Anonymous Inner class.
+    * The Anonymous Inner classes are destroyed after the execution of program from the memory.
+    * The Anonymous Inner classes can be used only for one time purpose.
+    * Anonymous Inner classes internally achieves inheritance and upcasting.
+
+Note : The difference between Method-local Inner Class and Anonymous Inner class is Method-Local inner class has class name,
+    Anonymous Inner class doesnt have class name.
+
+Lambda Expression : it is a Anonymous method which doesnt have access modifier, modifier, return type & names.
+    * Lambda expression is used to Implement Functional Interface
+    * Functional Interface declaration can holds lambda expression.
+
+"->" lambda token.
+
+Rules to declare Lambda Expression :
+    * It is not mandatory to specify the datatype in braces (paranthisis).
+    * if we have only one formal argument in abstract method of Functional Interface, then it is not mandatory to have the braces (paranthisis).
+    * if we have only one line of code, then we dont need enclosing body braces.
+    * if we have only one statement in lambda expression and that statement is returning any data,
+      then it is not mandatory to write return keyword.
+    * Whenever we use return keyword then it is mandatory to put the curly braces.
+
+New Features of Interface in java 8
+    1. Default Methods (Implementation)
+    * Before java 8 we can have only abstract methods in an Interface, 
+    but after java 8 we can create Default non static Methods with Implementation.
+    * In Interface, the Default access modifier for a method is public abstract. 
+    when we create default non static methods with Implementation we should use default keyword 
+    or else compiler will internally put public abstract as access modifier.
+
+    2. static Methods (Implementation)
+    * From java 8, we can create static method in Interface.
+    * Before java 8, we cant run a Interface. but after java 8 we can run a Interface by creating main methods inside Interface.
+    * From java 8, we can make the Interface object free (Invoking methods without creating object)
+    by creating only static methods in a Interface. 
+
+    3. Functional Interface
+    The Interface which has only one abstract method.
+    * It consists of only one abstract method but can have any number of default concrete methods and static methods.
+    * we use @FunctionalInterface to specify the compiler that the Interface is Functional Interface.
+    * When we use @FunctionalInterface annotation , compiler will allow the programmer to create only one abstract method in Interface.
+    * Functional Interface is used to enable lambda expression in java.
+
+        eg.
+        1. Runnable Interface
+        2. Comparable Interface
+        3. Comparator Interface...
+
+Method Reference : it is used to Implement Functional Interface.
+    * We can also use Method Reference instead of lambda expression to Implement Functional Interface.
+    * We use Method Reference to provide existing method's (reference method) implementation to Functional Interface.
+
+    Rules to declare Method Reference.
+    * The number of formal arguments in abstract method should be same as formal argument of reference method.
+    * If abstract method return type is void, then reference method can return any type of data.
+    * If abstract method returns any primitive/non primitive data then reference method return type should be same as abstract method.
+
+Constructor Reference : it is used whenever Functional Interface abstract method has non-primitive datatype as return type.

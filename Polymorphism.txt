@@ -1,0 +1,23 @@
+Polymorphism - Polymorphism is the core feature of OOPS.(poly means many, Morphism means forms)
+    An entity showing the Behaviour of another entity at different situations is known as polymorphism.
+
+    Polymorphism is of two types :
+        1. Compile-time polymorphism
+            * The call to the overloaded method is resolved at compile-time by compiler(JAVA C) based on argument/parameter type 
+                is known as compile-time polymorphism.
+            * Method Overloading achives compile-time polymorphism.
+        2. Run-time polymorphism
+            * The call to the overridden methods is resolved at Runtime by JVM based on the instance is known as Run-time polymorphism.
+            * Method overridding achives Run-time polymorphism.
+    
+    Advantages of polymorphism.
+    1. User/Developer Friendly.
+    2. Code Reusability
+    3. Achives loose coupling
+    4. Achives abstraction
+
+Tight coupling - If service provider code and end user code is connected in such a way 
+that any changes made in service provider code will directly affect the end user code.
+
+Loose coupling - If service provider code and end user code is connected in such a way 
+that any changes made in service provider code will not affect the end user code because interface comes in between.

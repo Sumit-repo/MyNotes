@@ -1,0 +1,108 @@
+Application
+    Application is a set of programs which is used to perform specific task.
+
+    1. Standalone Application
+    2. client-server Application
+    3. Web Application
+    4. Hybrid Application
+    5. Native Application
+
+Web-Application 
+    The application which are stored inside server and can be accessed through internet over the browser.
+
+    1. Static Webpage
+        The Webpage which are already stored inside the server are called as static webpage, Static webpages are common for everyone.
+    2. Dynamic Webpage
+        The webpage which are generated during the runtime based on the user are called Dynamic webpage,
+        Dynamic webpages can be different for everyone
+
+Architecture of Web Application
+
+Servlet 
+    A Servlet is a server side component which is used to built dynamic webpages.
+
+Why Servlet are server side component?
+    Servlet are executed inside the server, so they are known as server side component.
+
+Deployment Descriptor tool
+    Deployment Descriptor tool is used to map request(url) with the Servlets.
+
+In web application, Deployment Descriptor tool is named as web.xml
+
+Request Dispacther :- 
+    It is an interface, used to forward request from one resource to another resource.
+    
+Request Dispacther Methods:
+    1. forward() - It forwards request from one resource to another resource but does not carry content.
+    2. include() - It includes the content and then forwards the request from one resource to another resource.
+
+Generic Servlet                                     Http Servlet
+1. Protocol Independent                          Protocol Dependent
+2. It is not secured                             It is secured
+3. Session tracking is not supported             Session tracking is supported.
+4. User convinent Methods are not provided       User convinent Methods are provided.
+
+Methods of HttpServlet
+1. doPost() - Insert Data.
+2. doDelete() - Delete Data.
+3. doGet() - Fetch Data.
+4. doPut() - Update Data.
+
+Life Cycle of Servlet(Maintained by web container)
+1. Load the Servlet classes.
+2. Instantiate the Servlet.
+3. Invoke init Method
+4. Invoke service Method65. Invoke destroy Method
+
+Servlet-Context
+    <context-param>
+       <param-name>message</param-name>
+       <param-value>We are using servlet context</param-value>
+    </context-param>
+
+Servlet-Config
+    <servlet>
+    <servlet-name>B</servlet-name>
+    <servlet-class>Response2</servlet-class>
+    <init-param>
+      <param-name>message</param-name>
+      <param-value>We are using servlet config</param-value>
+    </init-param>
+    </servlet>
+
+Session-tracking
+    Session is a particular period of time.
+    Session-tracking is the process if storing information of the user for a particular period of time.
+
+Session-tracking is used to identify the user (client) by the server.
+
+Why do we need Session tracking?
+-> A server recieves multiple request at the same time, when server gets multiple requests, server is unable to identity the client.
+so to identify the client, we need Session tracking.
+
+Session-tracking and its technique 
+1. Cookies.
+2. Httpsession.
+3. Url-rewriting.
+4. Hidden-form field.
+
+Cookies -> Cookies are used to hold tiny piece of information about the user. Cookies are created in server and stored in browser.
+
+Disadvantages of Cookies:
+1. If user disables the permission, we cant store Cookies inside the browser. we can't achive session tracking.
+2. We can store only simple text.
+3. Some special characters (Control characters) are not allowed in Cookies. i.e. Whitespace(' '), double quotes(" "), Comma(',') etc.
+
+Httpsession -> Httpsession is an interface which is used to store information about the user. Httpsession Objects are stored inside the server.
+
+Important methods of Httpsession:
+* setAttribute(String key, Object value) -> It is used to store data in Httpsession Object.
+
+    Note: In Httpsession Object we can store any type of data because datatype of value is Object.
+
+* getAttribute(String key) -> It is used to fetch data from Httpsession Object. The return type of getAttribute method is Object.
+* removeAttribute(String key) -> It is used to detele data from Httpsession Object.
+* invalidate() -> It is used to destroy Httpsession Object.
+
+Note: For a single user only one Httpsession Object is created because Httpsession acts as a singleton class.
+      The data which is stored in Httpsession can be accessed throughout the session.

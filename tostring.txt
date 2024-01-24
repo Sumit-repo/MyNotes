@@ -1,0 +1,13 @@
+* without overridding toString method if you try to print ref varibable it will give the address of an object.
+* If you want to print based on the properties of an object then it is mandatory to override toString method.
+* without overridding toString method if you print ref then it will return address in the form of 
+    -> className@Hexadecimal
+* the return type of toString method is string.
+* toString method is called implicit as well as explicit.
+
+
+* Without overridding equals method if we try to use equals method it will compare based on the address of object.
+* If we want to compare based on the value then we will have to override equals method.
+* The return type of equals method is boolean type.
+* If we try to use equals operator to compare object then it will compare based on the address of object.
+* For string type,equals method is implicitly overridden, other than string we have to override explicitly. 

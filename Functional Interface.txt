@@ -1,0 +1,19 @@
+Functional Inteface - An interface which consits of atomst and atleast one abstract method.
+    * It is used to achive one task or one function
+    * We can have default and static methods.
+    * We use @FunctionalInterface annotation to create Functional interface but it is not mandatory.
+
+Functional Inteface is of two type
+    - Pre-defined
+        -> Comparable  
+            it is availble in java.lang
+            public int Comparable(object e)
+            DNSO - Default nature sorting order
+        -> Comparater
+            it is availble in java.util
+            public int Comparater(object e,object e)
+            CSO - comparable sorting order
+        -> Runable
+            it is availble in java.lang
+            public void ran()
+    - User-defined

@@ -1,0 +1,62 @@
+concrete - complete
+abstract - incomplete
+Abstract:
+•	Abstract is keyword and it is a modifier.
+•	Abstract keyword is used for methods and classes.
+•	If any class is having any abstract method then it is mandatory to make the whole class as abstract class
+•	Abstract keyword we can’t use for variables.
+
+Abstract method:
+•	The method pre-fixed with abstract keyword is known as abstract method.
+•	Abstract method is also known as incomplete method.
+•	Abstract method always ended with (semi-colon ;)
+•	Abstract method doesn’t contain any method body it contain only method declaration.
+
+concrete method
+•	A method with body or a method with complete implementation is known a concrete method.
+concrete class
+•	A class can’t have abstract methods.
+.   It can be instantiated(objects can be created).
+•	concrete class contain methods with full implementation.
+Abstract class
+•	A class prefixed with abstract keyword the class in known as abstract class.
+•	We can’t instantiate abstract class (we can’t create object).
+•	Abstract class just like a normal class.
+•	Abstract class is also known as incomplete class.
+•	In case if a class having one abstract method then it is mandatory to make class as abstract.
+•	Which method we can’t overwrite those we can’t make them abstract.
+•	Abstract class can contain concrete methods also. 
+
+•	public abstract static void.m1( );
+•	public abstract final void m1( );
+•	private abstract void m1( );
+
+•	abstract public void m1( );
+•	public abstract void m1( ); 
+
+Note:
+We can make non-static non-private non final methods as abstract method.
+Who will provide body for abstract methods?
+ Sub class (The class which is extends abstract class the class have to provide body for abstract methods).
+-------------------------------------------
+can we have non static data member in Abstract class? Y
+
+can we have static data member in Abstract class? Y 
+
+can we have final static and non static data members in abstract class? Y
+
+can we have blocks in abstract class? Y 
+
+can we have constructors in abstract class? Y
+
+can we have private methods in abstract class? y
+
+can we have static methods in abstract class? y
+
+can we have final methods in abstract class? y
+
+can we declare abstract methods private? N
+
+can we declare abstract methods final? N
+
+can we declare abstract methods static? N
