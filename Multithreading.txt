@@ -16,7 +16,7 @@ JVM will always create 3 Threads whenever a java program is runs.
 
 There are two ways to made Thread :
     -> Extends Thread
-    -> Implements Runable (Functional Interface) 
+    -> Implements Runnable (Functional Interface) 
 
 * Threads are independent 
 * Each and every thread will maintain seperate memory.
